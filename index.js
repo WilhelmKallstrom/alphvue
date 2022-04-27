@@ -26,6 +26,7 @@ const FetchData = async () => {
         .then(response => response.json())
         .then(data => transactions = data)
 
+
     await UpdateUI()
 }
 
@@ -44,10 +45,10 @@ const UpdateUI = async () => {
 
         const transactionHash = (transaction.hash).toString()
 
-        const testOut = transaction.outputs
-        const testIn = transaction.inputs
+        const transactionsOut = transaction.outputs
+        const transactionsIn = transaction.inputs
 
-        testOut.forEach(element => {
+        transactionsOut.forEach(element => {
             if (element.address == walletAddress) {
                 transactionType = '+'
                 transactionAmount = element.amount / 1000000000000000000
@@ -56,7 +57,7 @@ const UpdateUI = async () => {
 
         })
 
-        testIn.forEach(element => {
+        transactionsIn.forEach(element => {
             if (element.address == walletAddress) {
                 transactionType = '-'
                 transactionAmount = element.amount / 1000000000000000000
@@ -67,19 +68,19 @@ const UpdateUI = async () => {
 
         const transactionMarkup =
             `
-<div class="card mb-3">
-<div class="card-body">
+                <div class="card mb-3">
+                    <div class="card-body">
 
 
-<div class="d-flex justify-content-between">
-    <div>Hash: ${transactionHash.substring(0,16)}...</div>
-    <p ${transactionColor}>${transactionType}${transactionAmount.toFixed(2)} ℵ</p>
-</div>
+                        <div class="d-flex justify-content-between">
+                            <div>Hash: ${transactionHash.substring(0,16)}...</div>
+                            <p ${transactionColor}>${transactionType}${transactionAmount.toFixed(2)} ℵ</p>
+                        </div>
 
 
-  <p class="mb-0">${new Date(transaction.timestamp)}</p>
-</div>
-</div>
+                        <p class="mb-0">${new Date(transaction.timestamp)}</p>
+                    </div>
+                </div>
 
 `
         const newTransaction = document.createElement("div")
