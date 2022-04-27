@@ -1,7 +1,7 @@
 {
     "name": "AlphVue",
     "short_name": "AlphVue",
-    "start_url": "/?home=true",
+    "start_url": "https://wilhelmkallstrom.github.io/alphvue/",
     "icons": [],
     "theme_color": "#000000",
     "background_color": "#FFFFFF",
