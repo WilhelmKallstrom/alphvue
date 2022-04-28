@@ -48,6 +48,7 @@ body {
     height: 50px;
     border-radius: 0.5rem;
     border: 0;
+    background-color: #EFEFEF;
     color: #000;
 }
 
@@ -83,19 +84,20 @@ body {
     animation-name: loading-gradient;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+    border: 0;
 }
 
 @keyframes loading-gradient {
     0% {
-        background-color: #19191E;
+        background-color: #EFEFEF;
     }
 
     50% {
-        background-color: #222228;
+        background-color: #F5F5F5;
     }
 
     100% {
-        background-color: #19191E;
+        background-color: #EFEFEF;
     }
 }
 
