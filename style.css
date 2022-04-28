@@ -5,6 +5,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.ptr--ptr{
+    background-color: #fff;
+}
+
+
 .form-control{
     background-color: #1A1A1A !important;
     color: #fff !important;

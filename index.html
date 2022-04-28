@@ -27,7 +27,7 @@
 <body>
 
 
-    <div class="container mt-2">
+    <div class="container mt-2" id="app">
 
         <div class="d-flex justify-content-end">
             <button class="btn btn-transparent p-0" data-bs-toggle="modal" data-bs-target="#settingsModal">
@@ -66,9 +66,6 @@
     </div>
 
 
-
-
-
     <!--Settings Modal-->
     <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
@@ -94,6 +91,16 @@
 
 
 
+    <script src="index.umd.min.js"></script>
+    <script>
+        PullToRefresh.init({
+            mainElement: '#app',
+            onRefresh : function (done){
+                done()
+                location.reload()
+            }
+        })
+    </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -73,7 +73,7 @@ const UpdateUI = async () => {
 
 
                         <div class="d-flex justify-content-between">
-                            <div>Hash: ${transactionHash.substring(0,16)}...</div>
+                            <div>Hash: ${transactionHash.substring(0, 16)}...</div>
                             <p ${transactionColor}>${transactionType}${transactionAmount.toFixed(2)} ℵ</p>
                         </div>
 
@@ -94,7 +94,7 @@ const UpdateUI = async () => {
 FetchData()
 
 
-wallet_address_submit_btn.addEventListener('click', async() => {
+wallet_address_submit_btn.addEventListener('click', async () => {
     localStorage.setItem('wallet_address', wallet_address_input.value)
     location.reload()
 })
