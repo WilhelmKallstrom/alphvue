@@ -38,6 +38,7 @@ body {
     border-radius: 0.5rem;
     border: 0;
     background-color:#FF4D44;
+    color: #000;
 }
 #settings-popup-close-btn{
     position: absolute;
@@ -47,6 +48,7 @@ body {
     height: 50px;
     border-radius: 0.5rem;
     border: 0;
+    color: #000;
 }
 
 
