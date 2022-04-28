@@ -89,6 +89,22 @@ const UpdateUI = async () => {
 
     })
 
+    if (transactions.length == 0) {
+
+        const transactionMarkup =
+            `
+            <div class="card mb-3">
+            <div class="card-body text-center">
+                <p class="mb-0">Transactions will appear here</p>
+            </div>
+        </div>
+`
+        const newTransaction = document.createElement("div")
+        newTransaction.innerHTML = transactionMarkup
+        transactions_container.appendChild(newTransaction)
+
+    }
+
 }
 
 FetchData()
