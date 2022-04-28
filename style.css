@@ -1,16 +1,20 @@
 body {
     background-color: #141417;
     color: #fff;
-
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-.ptr--ptr{
-    background-color: #fff;
+.ptr--ptr {
+    background-color: #141417;
 }
 
+.bg-blue {
+    background-color: #3375BB;
+}
 
-.form-control{
+.form-control {
     background-color: #1A1A1A !important;
     color: #fff !important;
     border-color: #343434;
@@ -21,33 +25,35 @@ body {
     background-color: #19191E;
 }
 
-.bg-dark-custom{
-    background-color: #19191E;
+.bg-dark-custom {
+    background-color: #141417;
 }
 
-.bg-red{
+.bg-red {
     background-color: #FF3537;
 }
 
 
-.loading-gradient{
+.loading-gradient {
     animation-name: loading-gradient;
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
 
-@keyframes loading-gradient{
-    0%{
+@keyframes loading-gradient {
+    0% {
         background-color: #19191E;
     }
-    50%{
+
+    50% {
         background-color: #222228;
     }
-    100%{
+
+    100% {
         background-color: #19191E;
     }
 }
 
-.rounded-5{
+.rounded-5 {
     border-radius: .5rem;
 }
