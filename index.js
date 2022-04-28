@@ -4,8 +4,22 @@ const transactions_container = document.getElementById('transactions_container')
 const wallet_address_input = document.getElementById('wallet_address_input')
 const wallet_address_submit_btn = document.getElementById('wallet_address_submit_btn')
 
+
+
+
 let walletAddress = localStorage.getItem('wallet_address')
-wallet_address_input.value = localStorage.getItem('wallet_address')
+
+
+
+
+//Settings popup
+const settings_popup = document.getElementById('settings-popup')
+const settings_popup_confirm_btn = document.getElementById('settings-popup-confirm-btn')
+const settings_popup_close_btn = document.getElementById('settings-popup-close-btn')
+const settings_popup_wallet_field = document.getElementById('settings-popup-wallet-field')
+settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
+
+const settings_btn = document.getElementById('settings-btn')
 
 let balance = 0
 let price = 0
@@ -68,16 +82,12 @@ const UpdateUI = async () => {
 
         const transactionMarkup =
             `
-                <div class="card mb-3">
-                    <div class="card-body">
-
-
+                <div class="card mb-0 border-0 border-bottom">
+                    <div class="card-body ps-0 pe-0">
                         <div class="d-flex justify-content-between">
                             <div>Hash: ${transactionHash.substring(0, 16)}...</div>
                             <p ${transactionColor}>${transactionType}${transactionAmount.toFixed(2)} ℵ</p>
                         </div>
-
-
                         <p class="mb-0">${new Date(transaction.timestamp)}</p>
                     </div>
                 </div>
@@ -110,7 +120,24 @@ const UpdateUI = async () => {
 FetchData()
 
 
-wallet_address_submit_btn.addEventListener('click', async () => {
-    localStorage.setItem('wallet_address', wallet_address_input.value)
-    location.reload()
+
+
+
+
+settings_btn.addEventListener('click', async () => {
+    settings_popup.style.bottom = '0';
+})
+
+//Closing Settings
+settings_popup_close_btn.addEventListener('click', async () => {
+    settings_popup.style.bottom = '-50vh';
+})
+
+settings_popup_confirm_btn.addEventListener('click', async () => {
+    settings_popup.style.bottom = '-50vh';
+    setTimeout(function()
+    {
+        localStorage.setItem('wallet_address', settings_popup_wallet_field.value)
+        location.reload()
+    }, 500)
 })

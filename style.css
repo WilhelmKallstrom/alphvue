@@ -1,13 +1,60 @@
 body {
-    background-color: #141417;
-    color: #fff;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
+#settings-popup{
+    position:fixed;
+    left: 0;
+    bottom: -50vh;
+    right: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: #fff;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transition: all 0.25s ease;
+    box-shadow: rgba(149, 157, 165, 1) 0px 8px 25px;
+}
+#settings-popup input{
+    width: calc(100% - 50px);
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 0.5rem;
+    border: 0;
+    background-color: #EFEFEF;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#settings-popup-confirm-btn{
+    position: absolute;
+    bottom: 90px;
+    left: 25px;
+    right: 25px;
+    height: 50px;
+    border-radius: 0.5rem;
+    border: 0;
+    background-color:#FF4D44;
+}
+#settings-popup-close-btn{
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    height: 50px;
+    border-radius: 0.5rem;
+    border: 0;
+}
+
+
+
+
+
 .ptr--ptr {
-    background-color: #141417;
+    background-color: #fff;
 }
 
 .bg-blue {
@@ -20,10 +67,6 @@ body {
     border-color: #343434;
 }
 
-.card {
-    border-radius: 1rem;
-    background-color: #19191E;
-}
 
 .bg-dark-custom {
     background-color: #141417;
