@@ -45,6 +45,7 @@ body {
     background-color:#21E56F;
     color: #ffffff;
     font-weight: bold;
+    width: auto;
 }
 #settings-popup-close-btn{
     position: absolute;
@@ -57,6 +58,7 @@ body {
     background-color: #333333;
     color: #ffffff;
     font-weight: bold;
+    width: auto;
 }
 
 .card{
