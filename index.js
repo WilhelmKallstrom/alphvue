@@ -82,7 +82,7 @@ const UpdateUI = async () => {
 
         const transactionMarkup =
             `
-                <div class="card mb-3">
+                <div class="card mb-3 shadow-sm">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>Hash: ${transactionHash.substring(0, 16)}...</div>
