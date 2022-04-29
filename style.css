@@ -77,6 +77,9 @@ body {
     font-weight: bold;
 }
 
+.text-light{
+    color: #9E9EA0 !important;
+}
 
 .ptr--ptr {
     background-color: #222222;

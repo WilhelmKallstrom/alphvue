@@ -103,7 +103,7 @@ const UpdateUI = async () => {
 
         const transactionMarkup =
             `
-            <div class="card mb-3">
+            <div class="card mb-3 shadow">
             <div class="card-body text-center">
                 <p class="mb-0">Transactions will appear here</p>
             </div>
