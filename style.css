@@ -4,6 +4,7 @@ body {
     background-color: #222222;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
+    touch-action:pan-y;
 }
 
 #settings-popup{
