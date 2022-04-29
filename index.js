@@ -9,7 +9,7 @@ const wallet_address_submit_btn = document.getElementById('wallet_address_submit
 
 let walletAddress = localStorage.getItem('wallet_address')
 
-
+let settings_open = false
 
 
 //Settings popup
@@ -82,8 +82,8 @@ const UpdateUI = async () => {
 
         const transactionMarkup =
             `
-                <div class="card mb-0 border-0 border-bottom">
-                    <div class="card-body ps-0 pe-0">
+                <div class="card mb-3">
+                    <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>Hash: ${transactionHash.substring(0, 16)}...</div>
                             <p ${transactionColor}>${transactionType}${transactionAmount.toFixed(2)} ℵ</p>
@@ -125,16 +125,26 @@ FetchData()
 
 
 settings_btn.addEventListener('click', async () => {
-    settings_popup.style.bottom = '0';
+
+    if(!settings_open){
+        settings_popup.style.bottom = '0'
+    }else{
+        settings_popup.style.bottom = '-50vh'
+    }
+
+    settings_open = !settings_open
 })
+
 
 //Closing Settings
 settings_popup_close_btn.addEventListener('click', async () => {
     settings_popup.style.bottom = '-50vh';
+    settings_open = false
 })
 
 settings_popup_confirm_btn.addEventListener('click', async () => {
-    settings_popup.style.bottom = '-50vh';
+    settings_popup.style.bottom = '-50vh'
+    settings_open = false
     setTimeout(function()
     {
         localStorage.setItem('wallet_address', settings_popup_wallet_field.value)

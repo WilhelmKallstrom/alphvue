@@ -12,11 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <link rel="apple-touch-icon" href="assets/icons/icon-512x512.png"></link>
-<link rel="shortcut icon" type="image/jpg" href="assets/icons/icon-512x512.png"/>
+    <link rel="apple-touch-icon" href="assets/icons/icon-512x512.png">
+    </link>
+    <link rel="shortcut icon" type="image/jpg" href="assets/icons/icon-512x512.png" />
 
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#222222">
 
     <link rel="icon" href="favicon.ico">
     <link rel="manifest" href="manifest.json">
@@ -34,7 +35,7 @@
         <div class="d-flex justify-content-end">
 
             <button class="btn btn-transparent p-0" id="settings-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-sliders"
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-sliders"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" />
@@ -42,11 +43,11 @@
             </button>
         </div>
 
-        <p class="fw-bold mb-0 display-1" id="alph_amount_text">Loading</p>
-        <p class="fw-bold mb-5" id="dollar_amount_text">Loading</p>
+        <p class="fw-bold mb-0 display-1 text-center" id="alph_amount_text">Loading</p>
+        <p class="fw-bold mb-5 text-center" id="dollar_amount_text">Loading</p>
 
 
-        <p class="lead fw-bold">Recent Transactions</p>
+        <p class="lead fw-bold text-center">Recent Transactions</p>
 
         <div id="transactions_container">
             <div class="card mb-3 loading-gradient">
@@ -66,24 +67,23 @@
             </div>
         </div>
 
-
-        <div id="settings-popup">
-
-            <input type="text" id="settings-popup-wallet-field" placeholder="Enter your wallet address...">
-
-            <button id="settings-popup-confirm-btn">Confirm</button>
-            <button id="settings-popup-close-btn">Close</button>
-        </div>
-
     </div>
 
 
+
+    <div id="settings-popup">
+
+        <p class="text-center mb-0 fw-bold">Enter Your Wallet Address</p>
+        <input type="text" id="settings-popup-wallet-field" placeholder="Enter your wallet address...">
+        <button id="settings-popup-confirm-btn">Confirm</button>
+        <button id="settings-popup-close-btn">Close</button>
+    </div>
 
     <script src="index.umd.min.js"></script>
     <script>
         PullToRefresh.init({
             mainElement: '#app',
-            onRefresh : function (done){
+            onRefresh: function (done) {
                 done()
                 location.reload()
             }
