@@ -4,6 +4,7 @@ const transactions_container = document.getElementById('transactions_container')
 const wallet_address_input = document.getElementById('wallet_address_input')
 const wallet_address_submit_btn = document.getElementById('wallet_address_submit_btn')
 
+const recent_transactions_text = document.getElementById('recent_transactions_text')
 
 
 
@@ -24,6 +25,8 @@ const settings_btn = document.getElementById('settings-btn')
 let balance = 0
 let price = 0
 let transactions = null
+
+
 
 //Fetch all data from APIs
 const FetchData = async () => {
@@ -50,6 +53,12 @@ const UpdateUI = async () => {
     transactions_container.innerHTML = null
     alph_amount_text.innerHTML = `ℵ${balance.toFixed(2)}`
     dollar_amount_text.innerHTML = `$${(balance * price).toFixed(2)}`
+
+    if(walletAddress == ''){
+        alph_amount_text.innerHTML = 'No Wallet'
+        dollar_amount_text.innerHTML = 'Enter Your Wallet Address In Settings'
+        recent_transactions_text.innerHTML = ''
+    }
 
     transactions.forEach(transaction => {
 
@@ -98,22 +107,6 @@ const UpdateUI = async () => {
         transactions_container.appendChild(newTransaction)
 
     })
-
-    if (transactions.length == 0) {
-
-        const transactionMarkup =
-            `
-            <div class="card mb-3 shadow">
-            <div class="card-body text-center">
-                <p class="mb-0">Transactions will appear here</p>
-            </div>
-        </div>
-`
-        const newTransaction = document.createElement("div")
-        newTransaction.innerHTML = transactionMarkup
-        transactions_container.appendChild(newTransaction)
-
-    }
 
 }
 
