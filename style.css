@@ -85,6 +85,14 @@ body {
     background-color: #3375BB;
 }
 
+.text-green{
+    color: #21E56F;
+}
+
+.text-red{
+    color: #E02336;
+}
+
 .form-control {
     background-color: #1A1A1A !important;
     color: #fff !important;

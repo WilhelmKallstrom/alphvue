@@ -66,7 +66,7 @@ const UpdateUI = async () => {
             if (element.address == walletAddress) {
                 transactionType = '+'
                 transactionAmount = element.amount / 1000000000000000000
-                transactionColor = 'class="text-success fw-bold"'
+                transactionColor = 'class="text-green fw-bold"'
             }
 
         })
@@ -75,7 +75,7 @@ const UpdateUI = async () => {
             if (element.address == walletAddress) {
                 transactionType = '-'
                 transactionAmount = element.amount / 1000000000000000000
-                transactionColor = 'class="text-danger fw-bold"'
+                transactionColor = 'class="text-red fw-bold"'
             }
 
         })
