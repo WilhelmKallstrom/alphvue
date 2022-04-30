@@ -120,9 +120,10 @@ FetchData()
 settings_btn.addEventListener('click', async () => {
 
     if(!settings_open){
-        settings_popup.style.bottom = '0'
+        //settings_popup.style.bottom = '0'
+        settings_popup.style.transform = 'translateY(0)'
     }else{
-        settings_popup.style.bottom = '-50vh'
+        settings_popup.style.transform = 'translateY(50vh)'
     }
 
     settings_open = !settings_open
@@ -131,12 +132,12 @@ settings_btn.addEventListener('click', async () => {
 
 //Closing Settings
 settings_popup_close_btn.addEventListener('click', async () => {
-    settings_popup.style.bottom = '-50vh';
+    settings_popup.style.transform = 'translateY(50vh)'
     settings_open = false
 })
 
 settings_popup_confirm_btn.addEventListener('click', async () => {
-    settings_popup.style.bottom = '-50vh'
+    settings_popup.style.transform = 'translateY(50vh)'
     settings_open = false
     setTimeout(function()
     {

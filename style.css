@@ -10,7 +10,8 @@ body {
 #settings-popup{
     position:fixed;
     left: 0;
-    bottom: -50vh;
+    bottom: 0;
+    transform: translateY(50vh);
     right: 0;
     width: 100%;
     height: 50vh;
