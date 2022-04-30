@@ -54,7 +54,7 @@ const UpdateUI = async () => {
     alph_amount_text.innerHTML = `ℵ${balance.toFixed(2)}`
     dollar_amount_text.innerHTML = `$${(balance * price).toFixed(2)}`
 
-    if(walletAddress == '' || walletAddress == null){
+    if (walletAddress == '' || walletAddress == null) {
         alph_amount_text.innerHTML = 'Welcome'
         dollar_amount_text.innerHTML = 'Enter Your Wallet Address'
         settings_popup_close_btn.disabled = true
@@ -124,10 +124,10 @@ FetchData()
 
 settings_btn.addEventListener('click', async () => {
 
-    if(!settings_open){
+    if (!settings_open) {
         //settings_popup.style.bottom = '0'
         settings_popup.style.transform = 'translateY(0)'
-    }else{
+    } else {
         settings_popup.style.transform = 'translateY(50vh)'
     }
 
@@ -142,11 +142,16 @@ settings_popup_close_btn.addEventListener('click', async () => {
 })
 
 settings_popup_confirm_btn.addEventListener('click', async () => {
-    settings_popup.style.transform = 'translateY(50vh)'
-    settings_open = false
-    setTimeout(function()
-    {
-        localStorage.setItem('wallet_address', settings_popup_wallet_field.value)
-        location.reload()
-    }, 500)
+
+    if (settings_popup_wallet_field.value != '') {
+
+
+        settings_popup.style.transform = 'translateY(50vh)'
+        settings_open = false
+        setTimeout(function () {
+            localStorage.setItem('wallet_address', settings_popup_wallet_field.value)
+            location.reload()
+        }, 500)
+
+    }
 })
