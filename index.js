@@ -129,6 +129,7 @@ settings_btn.addEventListener('click', async () => {
         settings_popup.style.transform = 'translateY(0)'
     } else {
         settings_popup.style.transform = 'translateY(50vh)'
+        settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
     }
 
     settings_open = !settings_open
@@ -137,6 +138,7 @@ settings_btn.addEventListener('click', async () => {
 
 //Closing Settings
 settings_popup_close_btn.addEventListener('click', async () => {
+    settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
     settings_popup.style.transform = 'translateY(50vh)'
     settings_open = false
 })
