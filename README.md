@@ -8,12 +8,12 @@ AlphVue is a PWA for showing your ALPH wallet balance, value in FIAT, and recent
 
 ```bash
   iPhone
-    Navigate to https://wilhelmkallstrom.github.io/alphvue/ on the Safari browser
+    Navigate to <a href="https://wilhelmkallstrom.github.io/alphvue/">https://wilhelmkallstrom.github.io/alphvue/</a> on the Safari browser
     Tap the ‘Share’ button
     Scroll down and tap ‘Add to Home Screen’
 
   Android
-    Navigate to https://wilhelmkallstrom.github.io/alphvue/ on any browser
+    Navigate to <a href="https://wilhelmkallstrom.github.io/alphvue/">https://wilhelmkallstrom.github.io/alphvue/</a> on any browser
     Tap the ‘⋮’ button
     Scroll down and tap ‘Add to Home Screen’
 ```
