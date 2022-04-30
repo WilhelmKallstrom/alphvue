@@ -55,9 +55,14 @@ const UpdateUI = async () => {
     dollar_amount_text.innerHTML = `$${(balance * price).toFixed(2)}`
 
     if(walletAddress == ''){
-        alph_amount_text.innerHTML = 'No Wallet'
-        dollar_amount_text.innerHTML = 'Enter Your Wallet Address In Settings'
+        alph_amount_text.innerHTML = 'Welcome'
+        dollar_amount_text.innerHTML = 'Enter Your Wallet Address'
+        settings_popup_close_btn.disabled = true
+        settings_btn.disabled = true
+        settings_btn.style.opacity = 0
         recent_transactions_text.innerHTML = ''
+        settings_popup.style.transform = 'translateY(0)'
+        settings_open = true
     }
 
     transactions.forEach(transaction => {
