@@ -54,7 +54,7 @@ const UpdateUI = async () => {
     alph_amount_text.innerHTML = `ℵ${balance.toFixed(2)}`
     dollar_amount_text.innerHTML = `$${(balance * price).toFixed(2)}`
 
-    if(walletAddress == ''){
+    if(walletAddress == '' || walletAddress == null){
         alph_amount_text.innerHTML = 'Welcome'
         dollar_amount_text.innerHTML = 'Enter Your Wallet Address'
         settings_popup_close_btn.disabled = true
