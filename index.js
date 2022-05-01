@@ -167,7 +167,7 @@ window.addEventListener('click', function (e) {
         // Clicked in box
     } else if (!settings_btn.contains(e.target)) {
         // Clicked outside the box
-        if (settings_open && settings_popup_wallet_field.value != '') {
+        if (settings_open && walletAddress != null) {
             settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
             CloseSettingsPopup()
             settings_open = false
