@@ -1,3 +1,4 @@
+
 const alph_amount_text = document.getElementById('alph_amount_text')
 const dollar_amount_text = document.getElementById('dollar_amount_text')
 const transactions_container = document.getElementById('transactions_container')
@@ -104,7 +105,7 @@ const UpdateUI = async () => {
                             <div>Hash: ${transactionHash.substring(0, 16)}...</div>
                             <p ${transactionColor}>${transactionType}${transactionAmount.toFixed(2)} ℵ</p>
                         </div>
-                        <p class="mb-0">${new Date(transaction.timestamp)}</p>
+                        <p class="mb-0">${timeAgo(new Date(transaction.timestamp))}</p>
                     </div>
                 </div>
 
@@ -118,9 +119,6 @@ const UpdateUI = async () => {
 }
 
 FetchData()
-
-
-
 
 
 
@@ -179,3 +177,31 @@ function CloseSettingsPopup() {
     settings_popup.style.transform = 'translateY(75vh)'
     wallet_reminder.style.transform = 'translateY(-50px)'
 }
+
+
+
+function timeAgo(d){
+    const diff = (new Date() - d)/1000;
+    if(diff<60){
+      const v = Math.round(diff)
+      return v + ' second' + (v===1?'':'s') + ' ago';   
+    }
+    else if(diff<60*60){
+      const v = Math.round(diff/60)
+      return v + ' minute' + (v===1?'':'s') + ' ago';   
+    }
+    else if(diff<60*60*24){
+      const v = Math.round(diff/(60*60))
+      return v + ' hour' + (v===1?'':'s') + ' ago';   
+    }
+    else if(diff<60*60*24*30.436875){
+      const v = Math.round(diff/(60*60*24))
+      return v + ' day' + (v===1?'':'s') + ' ago';
+    }
+    else if(diff<60*60*24*30.436875*12){
+      const v = Math.round(diff/(60*60*24*30.436875))
+      return v + ' month' + (v===1?'':'s') + ' ago';
+    }
+    const v = Math.round(diff/(60*60*24*30.436875*12)) 
+    return v + ' year' + (v===1?'':'s') + ' ago';
+  }
