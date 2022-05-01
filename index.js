@@ -130,7 +130,7 @@ settings_btn.addEventListener('click', async () => {
         //settings_popup.style.bottom = '0'
         settings_popup.style.transform = 'translateY(0)'
     } else {
-        settings_popup.style.transform = 'translateY(50vh)'
+        settings_popup.style.transform = 'translateY(75vh)'
         settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
         wallet_reminder.style.transform = 'translateY(-50px)'
     }
@@ -142,7 +142,7 @@ settings_btn.addEventListener('click', async () => {
 //Closing Settings
 settings_popup_close_btn.addEventListener('click', async () => {
     settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
-    settings_popup.style.transform = 'translateY(50vh)'
+    settings_popup.style.transform = 'translateY(75vh)'
     wallet_reminder.style.transform = 'translateY(-50px)'
     settings_open = false
 })
@@ -150,7 +150,7 @@ settings_popup_close_btn.addEventListener('click', async () => {
 settings_popup_confirm_btn.addEventListener('click', async () => {
 
     if (settings_popup_wallet_field.value != '') {
-        settings_popup.style.transform = 'translateY(50vh)'
+        settings_popup.style.transform = 'translateY(75vh)'
         wallet_reminder.style.transform = 'translateY(-50px)'
         settings_open = false
         setTimeout(function () {
