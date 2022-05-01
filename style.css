@@ -34,6 +34,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     color: #ffffff;
+    margin-bottom: 25px;
 }
 #settings-popup-confirm-btn{
     position: absolute;

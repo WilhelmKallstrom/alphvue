@@ -7,11 +7,12 @@ const wallet_address_submit_btn = document.getElementById('wallet_address_submit
 const recent_transactions_text = document.getElementById('recent_transactions_text')
 
 const wallet_reminder = document.getElementById('wallet-reminder')
+const explorer_link = document.getElementById('explorer_link')
 
 let walletAddress = localStorage.getItem('wallet_address')
 
 let settings_open = false
-
+explorer_link.href = `https://explorer.alephium.org/#/addresses/${walletAddress}`
 
 //Settings popup
 const settings_popup = document.getElementById('settings-popup')
@@ -63,6 +64,7 @@ const UpdateUI = async () => {
         recent_transactions_text.innerHTML = ''
         settings_popup.style.transform = 'translateY(0)'
         settings_open = true
+        explorer_link.innerHTML = ''
     }
 
     transactions.forEach(transaction => {
