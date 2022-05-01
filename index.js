@@ -106,6 +106,8 @@ const UpdateUI = async () => {
                             <p ${transactionColor}>${transactionType}${transactionAmount.toFixed(2)} ℵ</p>
                         </div>
                         <p class="mb-0">${timeAgo(new Date(transaction.timestamp))}</p>
+
+                        <a href="https://explorer.alephium.org/#/transactions/${transactionHash}" class="stretched-link"></a>
                     </div>
                 </div>
 
