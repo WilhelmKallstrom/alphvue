@@ -6,7 +6,7 @@ const wallet_address_submit_btn = document.getElementById('wallet_address_submit
 
 const recent_transactions_text = document.getElementById('recent_transactions_text')
 
-
+const wallet_reminder = document.getElementById('wallet-reminder')
 
 let walletAddress = localStorage.getItem('wallet_address')
 
@@ -130,6 +130,7 @@ settings_btn.addEventListener('click', async () => {
     } else {
         settings_popup.style.transform = 'translateY(50vh)'
         settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
+        wallet_reminder.style.transform = 'translateY(-50px)'
     }
 
     settings_open = !settings_open
@@ -140,20 +141,24 @@ settings_btn.addEventListener('click', async () => {
 settings_popup_close_btn.addEventListener('click', async () => {
     settings_popup_wallet_field.value = localStorage.getItem('wallet_address')
     settings_popup.style.transform = 'translateY(50vh)'
+    wallet_reminder.style.transform = 'translateY(-50px)'
     settings_open = false
 })
 
 settings_popup_confirm_btn.addEventListener('click', async () => {
 
     if (settings_popup_wallet_field.value != '') {
-
-
         settings_popup.style.transform = 'translateY(50vh)'
+        wallet_reminder.style.transform = 'translateY(-50px)'
         settings_open = false
         setTimeout(function () {
             localStorage.setItem('wallet_address', settings_popup_wallet_field.value)
             location.reload()
         }, 500)
+
+    }else{
+        wallet_reminder.style.transform = 'translateY(75px)'
+
 
     }
 })

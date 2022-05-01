@@ -65,6 +65,22 @@ body {
     opacity: 0.5;
 }
 
+#wallet-reminder{
+    position: fixed;
+    height: 50px;
+    background-color: #E02336;
+    width: auto;
+    left: 25px;
+    right: 25px;
+    top: -50px;
+    border-radius: 1rem;
+    padding-top: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
 .card{
     background-color: #333333;
     border-radius: 1rem;
