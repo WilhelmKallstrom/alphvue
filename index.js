@@ -27,19 +27,26 @@ const settings_btn = document.getElementById('settings-btn')
 let balance = 0
 let price = 0
 let transactions = null
+let isThePriceUp = false
 
 
 
 //Fetch all data from APIs
 const FetchData = async () => {
 
+    await fetch('https://api.coingecko.com/api/v3/simple/price?ids=alephium&vs_currencies=usd')
+    .then(response => response.json())
+    .then(data => price = data.alephium.usd)
+
+    await fetch('https://api.coingecko.com/api/v3/coins/alephium')
+    .then(response => response.json())
+    .then(data => isThePriceUp = data.market_data.price_change_percentage_24h_in_currency.usd > 0)
+
+    console.log(isThePriceUp)
+
     await fetch(`https://mainnet-backend.alephium.org/addresses/${walletAddress}/balance`)
         .then(response => response.json())
         .then(data => balance = data.balance / 1000000000000000000)
-
-    await fetch('https://api.coingecko.com/api/v3/simple/price?ids=alephium&vs_currencies=usd')
-        .then(response => response.json())
-        .then(data => price = data.alephium.usd)
 
     await fetch(`https://mainnet-backend.alephium.org/addresses/${walletAddress}/transactions?page=1`)
         .then(response => response.json())
@@ -116,6 +123,13 @@ const UpdateUI = async () => {
         transactions_container.appendChild(newTransaction)
 
     })
+
+    
+    if(isThePriceUp){
+        dollar_amount_text.style.color = '#21E56F'
+    }else{
+        dollar_amount_text.style.color = '#E02336'
+    }
 
 }
 
