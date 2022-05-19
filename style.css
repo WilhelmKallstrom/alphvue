@@ -120,6 +120,10 @@ body {
     color: #E02336;
 }
 
+.bg-secondary-dark{
+    background-color: #333333;
+}
+
 .form-control {
     background-color: #1A1A1A !important;
     color: #fff !important;

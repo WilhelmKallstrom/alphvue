@@ -27,7 +27,7 @@ const settings_btn = document.getElementById('settings-btn')
 let balance = 0
 let price = 0
 let transactions = null
-let isThePriceUp = false
+let pricePercentageChange = 0
 
 
 
@@ -40,9 +40,9 @@ const FetchData = async () => {
 
     await fetch('https://api.coingecko.com/api/v3/coins/alephium')
     .then(response => response.json())
-    .then(data => isThePriceUp = data.market_data.price_change_percentage_24h_in_currency.usd > 0)
+    .then(data => pricePercentageChange = data.market_data.price_change_percentage_24h_in_currency.usd)
 
-    console.log(isThePriceUp)
+    console.log(pricePercentageChange.toFixed(2))
 
     await fetch(`https://mainnet-backend.alephium.org/addresses/${walletAddress}/balance`)
         .then(response => response.json())
@@ -60,8 +60,14 @@ const FetchData = async () => {
 const UpdateUI = async () => {
 
     transactions_container.innerHTML = null
+
+    let plus = ''
+
+    if(pricePercentageChange >= 0)
+        plus = '+'
+
     alph_amount_text.innerHTML = `ℵ${balance.toFixed(2)}`
-    dollar_amount_text.innerHTML = `$${(balance * price).toFixed(2)}`
+    dollar_amount_text.innerHTML = `$${(balance * price).toFixed(2)} (${plus}${pricePercentageChange.toFixed(2)}%)`
 
     if (walletAddress == '' || walletAddress == null) {
         alph_amount_text.innerHTML = 'Welcome'
@@ -125,7 +131,7 @@ const UpdateUI = async () => {
     })
 
     
-    if(isThePriceUp){
+    if(pricePercentageChange >= 0){
         dollar_amount_text.style.color = '#21E56F'
     }else{
         dollar_amount_text.style.color = '#E02336'
