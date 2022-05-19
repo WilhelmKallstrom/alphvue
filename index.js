@@ -175,7 +175,8 @@ settings_popup_confirm_btn.addEventListener('click', async () => {
         }, 500)
 
     } else {
-        wallet_reminder.style.transform = 'translateY(75px)'
+      //  wallet_reminder.style.transform = 'translateY(75px)'
+        alert('Please enter a wallet address')
 
 
     }
