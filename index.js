@@ -175,7 +175,7 @@ settings_popup_confirm_btn.addEventListener('click', async () => {
         }, 500)
 
     } else {
-        wallet_reminder.style.transform = 'translateY(98px)'
+        wallet_reminder.style.transform = 'translateY(75px)'
 
 
     }
@@ -195,7 +195,7 @@ window.addEventListener('click', function (e) {
 })
 
 function CloseSettingsPopup() {
-    settings_popup.style.transform = 'translateY(98vh)'
+    settings_popup.style.transform = 'translateY(75vh)'
     wallet_reminder.style.transform = 'translateY(-50px)'
 }
 
