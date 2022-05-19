@@ -11,10 +11,10 @@ body {
     position:fixed;
     left: 0;
     bottom: 0;
-    transform: translateY(75vh);
+    transform: translateY(98vh);
     right: 0;
     width: 100%;
-    height: 75vh;
+    height: 98vh;
     padding-top: 25px;
     background-color: #181818;
     border-top-left-radius: 2rem;
